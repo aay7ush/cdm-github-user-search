@@ -9,8 +9,8 @@ const UserProfile = ({ user }) => {
       try {
         const response = await fetch(`https://api.github.com/users/${user}`)
         if (response.ok) {
-          const data = await response.json()
-          setData(data)
+          const userData = await response.json()
+          setData(userData)
         } else {
           setData(null)
         }
@@ -36,7 +36,7 @@ const UserProfile = ({ user }) => {
   }
 
   return (
-    <section className="rounded-md bg-gray-800 p-5 grid justify-items-center space-y-2">
+    <section className="rounded-md bg-gray-800 p-5 text-center grid justify-items-center space-y-2">
       {data ? (
         <>
           <img
@@ -46,13 +46,11 @@ const UserProfile = ({ user }) => {
             height={100}
             className="rounded-full"
           />
-          <h2 className="text-2xl font-medium">
-            {data.name ? data.name : data.login}
-          </h2>
+          <h2 className="text-2xl font-medium">{data.name || data.login}</h2>
           <p className="text-sm text-gray-300">
             Joined {formatDate(data.created_at)}
           </p>
-          <p className="max-w-xs text-center">{data.bio}</p>
+          {data.bio && <p className="max-w-xs">{data.bio}</p>}
           <div className="w-full p-4 flex justify-between bg-gray-950 bg-opacity-50 rounded-md">
             <div>
               <p className="text-gray-300 font-medium">Repos</p>
