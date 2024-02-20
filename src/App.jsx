@@ -1,4 +1,11 @@
+import Header from './components/Header'
+
 const App = () => {
-  return <h1 className="text-3xl font-bold">Ready to build</h1>
+  return (
+    <main className="min-h-screen text-white grid place-content-center dark:bg-gray-900 space-y-5 py-10">
+      <Header />
+    </main>
+  )
 }
+
 export default App
