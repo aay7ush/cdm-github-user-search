@@ -2,7 +2,7 @@ import { Moon, Sun } from 'lucide-react'
 import { useState } from 'react'
 
 const ThemeSwitcher = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle('dark')
