@@ -1,0 +1,3 @@
+tabs: ["src/App.jsx","src/components/Header.jsx","src/components/SearchBox.jsx","src/components/ThemeSwitcher.jsx","src/components/UserProfile.jsx"]
+terminals: ["bun install && bun run dev"]
+run-button: bun run dev
