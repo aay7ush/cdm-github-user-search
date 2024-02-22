@@ -52,40 +52,40 @@ const UserProfile = ({ user }) => {
           </p>
           {data.bio && <p className="max-w-xs">{data.bio}</p>}
           <div className="w-full p-4 flex justify-between bg-gray-950 bg-opacity-50 rounded-md">
-            <div>
+            <div className="repos">
               <p className="text-gray-300 font-medium">Repos</p>
               <p className="font-bold text-2xl">{data.public_repos}</p>
             </div>
-            <div>
+            <div className="followers">
               <p className="text-gray-300 font-medium">Followers</p>
               <p className="font-bold text-2xl">{data.followers}</p>
             </div>
-            <div>
+            <div className="followings">
               <p className="text-gray-300 font-medium">Following</p>
               <p className="font-bold text-2xl">{data.following}</p>
             </div>
           </div>
           <div className="space-y-2">
             {data.location && (
-              <div className="flex gap-3 items-center">
+              <div className="location">
                 <MapPin />
                 <p>{data.location}</p>
               </div>
             )}
             {data.company && (
-              <div className="flex gap-3 items-center">
+              <div className="company">
                 <Building2 />
                 <p>{data.company}</p>
               </div>
             )}
             {data.email && (
-              <div className="flex gap-3 items-center">
+              <div className="email">
                 <Mail />
                 <p>{data.email}</p>
               </div>
             )}
             {data.blog && (
-              <div className="flex gap-3 items-center">
+              <div className="website">
                 <Link />
                 <a
                   href={data.blog}
@@ -96,7 +96,7 @@ const UserProfile = ({ user }) => {
               </div>
             )}
             {data.twitter_username && (
-              <div className="flex gap-3 items-center">
+              <div className="twitter">
                 <Twitter />
                 <a
                   href={`https://twitter.com/${data.twitter_username}`}
